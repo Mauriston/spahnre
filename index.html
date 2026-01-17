@@ -100,10 +100,12 @@
                 <span class="material-symbols-rounded text-military-gold">medical_services</span> Rabdomiólise
             </button>
             <button onclick="switchView('radio')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
-                <span class="material-symbols-rounded text-military-gold">radiology</span> Radiografia Ortopédica
+                <!-- Ícone corrigido para evitar erro de renderização -->
+                <span class="material-symbols-rounded text-military-gold">skeleton</span> Radiografia Ortopédica
             </button>
             <button onclick="switchView('lomb')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
-                <span class="material-symbols-rounded text-military-gold">back_pain</span> Lombalgia Aguda
+                <!-- Ícone corrigido para evitar erro de renderização -->
+                <span class="material-symbols-rounded text-military-gold">personal_injury</span> Lombalgia Aguda
             </button>
         </nav>
         <div class="p-4 bg-gray-50 border-t border-gray-200 text-center">
@@ -261,12 +263,12 @@
         <!-- VIEW 2: RADIOGRAFIA ORTOPÉDICA -->
         <!-- ================================================================================= -->
         <section id="view-radio" class="view-section hidden space-y-6">
-            <!-- Regra Fundamental -->
-            <div class="bg-military-900 text-white rounded-xl p-6 shadow-md3-elevated text-center border-b-8 border-military-gold">
-                <span class="material-symbols-rounded text-military-gold text-4xl mb-2">grid_view</span>
-                <h2 class="font-display font-bold text-xl uppercase mb-2">Regra Fundamental</h2>
-                <p class="text-lg font-bold">Mínimo de 2 Incidências Ortogonais</p>
-                <p class="text-xs text-gray-300 mt-2 opacity-80">Para articulações, sempre avaliar 3 ou 4 incidências.</p>
+            <!-- Regra Fundamental (Estilo Ajustado) -->
+            <div class="bg-military-red/5 border-l-4 border-military-red rounded-xl p-6 shadow-md3-elevated text-center">
+                <span class="material-symbols-rounded text-military-red text-4xl mb-2">grid_view</span>
+                <h2 class="font-display font-bold text-military-red text-xl uppercase mb-2">Regra Fundamental</h2>
+                <p class="text-lg font-bold text-military-900">Mínimo de 2 Incidências Ortogonais</p>
+                <p class="text-xs text-gray-600 mt-2">Para articulações, sempre avaliar 3 ou 4 incidências.</p>
             </div>
 
             <!-- Princípios -->
@@ -310,7 +312,8 @@
                 <!-- Coluna -->
                 <details class="bg-white rounded-lg shadow-sm border border-gray-100 group">
                     <summary class="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50 font-bold text-military-900 text-sm">
-                        <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-gold">vertebra</span> Coluna Vertebral</div>
+                        <!-- Ícone ajustado -->
+                        <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-gold">accessibility_new</span> Coluna Vertebral</div>
                         <span class="material-symbols-rounded text-gray-400 expand-icon transition-transform">expand_more</span>
                     </summary>
                     <div class="p-4 border-t border-gray-100 text-sm text-gray-600 bg-gray-50 space-y-3">
@@ -392,6 +395,11 @@
                     </div>
                 </details>
             </div>
+
+            <!-- Imagem Logo -->
+            <div class="mt-12 mb-4 no-print flex justify-center">
+                <img src="https://i.imgur.com/wjxT0G4.png" alt="Logo Divisão Medicina" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
+            </div>
         </section>
 
         <!-- ================================================================================= -->
@@ -400,7 +408,8 @@
         <section id="view-lomb" class="view-section hidden space-y-6">
             <!-- Definição -->
             <div class="bg-military-surface-container rounded-xl p-4 shadow-md3-elevated flex items-center gap-4 border-l-4 border-military-gold">
-                <span class="material-symbols-rounded text-military-gold text-3xl">back_pain</span>
+                <!-- Ícone corrigido -->
+                <span class="material-symbols-rounded text-military-gold text-3xl">personal_injury</span>
                 <div>
                     <h3 class="font-display font-bold text-military-900 text-sm uppercase mb-1">Lombalgia Aguda Atraumática</h3>
                     <p class="text-sm text-military-900">Dor lombar de início recente (< 6 semanas) sem história de trauma significativo.</p>
@@ -424,7 +433,7 @@
                 </div>
             </div>
 
-            <!-- Fluxograma de Imagem -->
+            <!-- Fluxograma de Imagem (Corrigido Mermaid) -->
             <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col">
                 <div class="flex items-center mb-3 text-military-900">
                     <span class="material-symbols-rounded mr-2 text-2xl text-military-green">image</span>
@@ -433,10 +442,10 @@
                 <div class="mermaid flex-grow overflow-x-auto pb-4 flex justify-center">
                     graph TD
                         A[Lombalgia Aguda] --> B{Red Flags?}
-                        B -- Não --> C[<b>NÃO PEDIR IMAGEM</b><br/>Tratamento Sintomático]
+                        B -- Não --> C[<b>NÃO PEDIR IMAGEM</b>]
                         B -- Sim --> D{Suspeita?}
                         D -- Fratura/Infecção/Tumor --> E[Raio-X + Lab]
-                        D -- Déficit Neuro/Cauda Equina --> F[Ressonância Magnética]
+                        D -- Neuro/Cauda Equina --> F[Ressonância]
                         
                         style C fill:#078551,stroke:#050f14,color:white
                         style F fill:#ba1a1a,stroke:#050f14,color:white
@@ -508,6 +517,11 @@
                         </ul>
                     </div>
                 </details>
+            </div>
+
+            <!-- Imagem Logo -->
+            <div class="mt-12 mb-4 no-print flex justify-center">
+                <img src="https://i.imgur.com/wjxT0G4.png" alt="Logo Divisão Medicina" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
             </div>
         </section>
 
