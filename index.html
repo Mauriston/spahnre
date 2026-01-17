@@ -560,75 +560,144 @@
                 </div>
             </div>
 
-            <!-- Checklist Anatômico (Accordion) -->
-            <div class="space-y-2">
-                <h3 class="font-display font-bold text-military-900 text-sm uppercase pl-1 mb-2">Protocolos por Região</h3>
+            <!-- INCIDÊNCIAS RADIOGRÁFICAS (Card Unificado) -->
+            <div class="bg-white p-5 rounded-xl shadow-md3-elevated">
+                <div class="flex items-center mb-3 border-b pb-2">
+                    <span class="material-symbols-rounded mr-2 text-military-900">radiology</span>
+                    <h3 class="font-display font-bold text-military-900">INCIDÊNCIAS RADIOGRÁFICAS</h3>
+                </div>
                 
-                <!-- Membro Superior -->
-                <details class="bg-white rounded-lg shadow-sm border border-gray-100 group">
-                    <summary class="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50 font-bold text-military-900 text-sm">
-                        <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-gold">back_hand</span> Membro Superior (Mão/Punho/Cotovelo)</div>
-                        <span class="material-symbols-rounded text-gray-400 expand-icon transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-4 border-t border-gray-100 text-sm text-gray-600 bg-gray-50 space-y-3">
+                <div class="space-y-3 text-sm text-gray-700">
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
                         <div>
-                            <p class="font-bold text-military-900">Mão e Punho</p>
-                            <p class="text-xs">Incidências: PA, Perfil e Oblíqua.</p>
-                            <p class="text-xs text-red-700 mt-1">⚠️ Atenção: Escafóide (dor na tabaqueira) e Luxações perissemilunares.</p>
+                            <span class="font-bold text-military-900 block">MÃO</span>
+                            <span>AP e oblíqua.</span>
                         </div>
-                        <div>
-                            <p class="font-bold text-military-900">Cotovelo</p>
-                            <p class="text-xs">Incidências: AP e Perfil.</p>
-                            <p class="text-xs text-red-700 mt-1">⚠️ Atenção: Sinal da Vela (Gordura posterior) = Fratura oculta.</p>
-                        </div>
+                        <button onclick="openModal('img-hand')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
                     </div>
-                </details>
 
-                <!-- Coluna -->
-                <details class="bg-white rounded-lg shadow-sm border border-gray-100 group">
-                    <summary class="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50 font-bold text-military-900 text-sm">
-                        <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-gold">accessibility_new</span> Coluna Vertebral</div>
-                        <span class="material-symbols-rounded text-gray-400 expand-icon transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-4 border-t border-gray-100 text-sm text-gray-600 bg-gray-50 space-y-3">
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
                         <div>
-                            <p class="font-bold text-military-900">Cervical</p>
-                            <p class="text-xs">Incidências: AP, Perfil, Oblíquas e Transoral (C1-C2).</p>
+                            <span class="font-bold text-military-900 block">PUNHO</span>
+                            <span>AP e perfil.</span>
                         </div>
-                        <div>
-                            <p class="font-bold text-military-900">Torácica e Lombar</p>
-                            <p class="text-xs">Incidências: AP e Perfil.</p>
-                            <p class="text-xs text-red-700 mt-1">⚠️ Atenção: Perda de altura do corpo vertebral e desalinhamentos.</p>
-                        </div>
+                        <button onclick="openModal('img-wrist')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
                     </div>
-                </details>
 
-                <!-- Membro Inferior -->
-                <details class="bg-white rounded-lg shadow-sm border border-gray-100 group">
-                    <summary class="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-50 font-bold text-military-900 text-sm">
-                        <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-gold">directions_walk</span> Membro Inferior (Quadril/Joelho/Pé)</div>
-                        <span class="material-symbols-rounded text-gray-400 expand-icon transition-transform">expand_more</span>
-                    </summary>
-                    <div class="p-4 border-t border-gray-100 text-sm text-gray-600 bg-gray-50 space-y-3">
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
                         <div>
-                            <p class="font-bold text-military-900">Pelve e Quadril</p>
-                            <p class="text-xs">Incidências: AP de Pelve + AP e Perfil (Dunn/Axial) de Quadril.</p>
+                            <span class="font-bold text-military-900 block">ANTEBRAÇO</span>
+                            <span>AP e perfil</span>
                         </div>
-                        <div>
-                            <p class="font-bold text-military-900">Joelho</p>
-                            <p class="text-xs">Incidências: AP, Perfil e Axial de Patela.</p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-military-900">Tornozelo</p>
-                            <p class="text-xs">Incidências: AP, Perfil e Mortise (rot. interna 15-20°).</p>
-                        </div>
-                        <div>
-                            <p class="font-bold text-military-900">Pé</p>
-                            <p class="text-xs">Incidências: AP, Perfil e Oblíqua.</p>
-                            <p class="text-xs text-red-700 mt-1">⚠️ Atenção: Base do 5º metatarso e Articulação de Lisfranc.</p>
-                        </div>
+                        <button onclick="openModal('img-forearm')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
                     </div>
-                </details>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">COTOVELO</span>
+                            <span>AP e perfil.</span>
+                        </div>
+                        <button onclick="openModal('img-elbow')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">BRAÇO</span>
+                            <span>AP e perfil</span>
+                        </div>
+                        <button onclick="openModal('img-arm')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">OMBRO</span>
+                            <span>AP verdadeiro, perfil de escápula e axilar</span>
+                        </div>
+                        <button onclick="openModal('img-shoulder')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">COLUNA CERVICAL</span>
+                            <span>AP e perfil. Incidência transoral (para C1-C2).</span>
+                        </div>
+                        <button onclick="openModal('img-cspine')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">COLUNA TORACOLOMBAR</span>
+                            <span>AP e perfil.</span>
+                        </div>
+                        <button onclick="openModal('img-tspine')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">BACIA</span>
+                            <span>AP e pata de rã</span>
+                        </div>
+                        <button onclick="openModal('img-pelvis')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">JOELHO</span>
+                            <span>AP e perfil. Patela: axial.</span>
+                        </div>
+                        <button onclick="openModal('img-knee')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">PERNA</span>
+                            <span>AP e perfil</span>
+                        </div>
+                        <button onclick="openModal('img-leg')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between border-b border-gray-50 pb-2">
+                        <div>
+                            <span class="font-bold text-military-900 block">TORNOZELO</span>
+                            <span>AP, AP verdadeiro e perfil</span>
+                        </div>
+                        <button onclick="openModal('img-ankle')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="font-bold text-military-900 block">PÉ</span>
+                            <span>AP e oblíquo</span>
+                        </div>
+                        <button onclick="openModal('img-foot')" class="text-military-gold hover:text-military-900 transition-colors">
+                            <span class="material-symbols-rounded">photo_library</span>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Sinais de Alerta -->
