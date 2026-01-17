@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -191,7 +191,7 @@
                 <!-- Risk Profile -->
                 <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full order-5 lg:order-none">
                     <div class="flex items-center mb-3 text-military-900">
-                        <span class="material-symbols-rounded mr-2 text-military-gold text-2xl">priority_high</span>
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">priority_high</span>
                         <h2 class="font-display font-bold text-lg">Alto Risco</h2>
                     </div>
                     <div class="text-sm space-y-2">
@@ -325,17 +325,6 @@
                         <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
                             <span class="material-symbols-rounded text-military-red">monitor_heart</span> 
                             Instabilidade Hemodinâmica
-                        </p>
-
-                        <!-- Novos itens adicionados aqui -->
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
-                            <span class="material-symbols-rounded text-military-red">healing</span> 
-                            Edema ou Equimoses
-                        </p>
-
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
-                            <span class="material-symbols-rounded text-military-red">bubble_chart</span> 
-                            Crepitações
                         </p>
                     </div>
                 </div>
@@ -529,7 +518,6 @@
         <section id="view-radio" class="view-section hidden space-y-6">
             <!-- Regra Fundamental (Estilo Ajustado para Alerta Vermelho) -->
             <div class="bg-military-red/5 border-l-4 border-military-red rounded-xl p-6 shadow-md3-elevated text-center">
-                <!-- Ícone removido conforme solicitado -->
                 <h2 class="font-display font-bold text-military-red text-xl uppercase mb-2">Regra Fundamental</h2>
                 <div class="flex items-center justify-center gap-2">
                     <p class="text-lg font-bold text-military-900">Mínimo de 2 Incidências Ortogonais</p>
@@ -537,7 +525,6 @@
                         <span class="material-symbols-rounded icon-light text-2xl">photo_library</span>
                     </button>
                 </div>
-                <!-- Texto removido conforme solicitado -->
             </div>
 
             <!-- Princípios -->
@@ -562,11 +549,11 @@
                             <span class="font-bold text-military-900">Dúvidas: faça contato com os Ortopedistas de bordo:</span>
                             <a href="https://wa.me/5581986541187" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (Md) Mauriston</span>
+                                <span>CT (Md) Mauriston &nbsp;&nbsp;&nbsp;</span>
                             </a>
                             <a href="https://wa.me/5581992931840" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (RM2-Md) Júlio César</span>
+                                <span>CT (RM2-Md) Júlio César &nbsp;&nbsp;&nbsp;</span>
                             </a>
                         </div>
                     </div>
@@ -655,6 +642,9 @@
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">person_alert</span> Dor desproporcional (Síndrome Compartimental?)</p>
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">block</span> Bloqueio Articular ou Instabilidade</p>
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">electrical_services</span> Déficit Neurovascular Distal</p>
+                    <!-- Novos itens movidos de Rabdomiólise -->
+                    <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">healing</span> Edema ou Equimoses</p>
+                    <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">bubble_chart</span> Crepitações</p>
                 </div>
             </div>
 
@@ -880,11 +870,17 @@
     <!-- Image Modal (Large) -->
     <div id="imageModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4 transition-opacity opacity-0" aria-hidden="true" onclick="closeImageModal()">
         <div class="relative w-full max-w-4xl h-full flex flex-col items-center justify-center">
-            <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white hover:text-military-gold transition-colors z-[70]">
-                <span class="material-symbols-rounded text-4xl">close</span>
+            <!-- Botão Fechar Modal Imagem - Estilizado igual ao modal de texto -->
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-[70] backdrop-blur-md">
+                <span class="material-symbols-rounded text-2xl">close</span>
             </button>
-            <img id="imageModalSrc" src="" alt="Imagem Ampliada" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
-            <p id="imageModalCaption" class="text-white mt-4 text-center font-sans text-sm md:text-base max-w-2xl bg-black/50 p-2 rounded"></p>
+            
+            <div class="bg-white rounded-xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+                 <img id="imageModalSrc" src="" alt="Imagem Ampliada" class="max-w-full max-h-[70vh] object-contain bg-black">
+                 <div class="p-4 bg-military-surface-container border-t border-gray-100">
+                    <p id="imageModalCaption" class="text-military-900 text-sm font-sans text-center"></p>
+                 </div>
+            </div>
         </div>
     </div>
 
