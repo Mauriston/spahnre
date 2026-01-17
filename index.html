@@ -1038,49 +1038,57 @@
                 type: "image-modal",
                 title: "MÃO",
                 text: "<strong>Procurar:</strong> Fraturas de falange, colo do 5º metacarpo (Boxer) e base do 1º metacarpo (Bennet).",
-                images: ["https://i.imgur.com/TwwicFw.jpeg", "https://i.imgur.com/bN3LzqN.jpeg"]
+                images: ["https://i.imgur.com/TwwicFw.jpeg", "https://i.imgur.com/bN3LzqN.jpeg"],
+                caption: "Fraturas das falanges proximais dos 2º e 3º QDE"
             },
             "img-wrist": {
                 type: "image-modal",
                 title: "PUNHO",
                 text: "<strong>Procurar:</strong> Fraturas do rádio distal: desvio dorsal (Colles), desvio volar (Smith), cisalhamento volar (Barton)",
-                images: ["https://i.imgur.com/ljJvbhW.jpeg", "https://i.imgur.com/bTsfKsS.jpeg"]
+                images: ["https://i.imgur.com/OgLvdtA.jpeg", "https://i.imgur.com/ljJvbhW.jpeg", "https://i.imgur.com/bTsfKsS.jpeg"],
+                caption: "Fratura de Colles"
             },
             "img-forearm": {
                 type: "image-modal",
                 title: "ANTEBRAÇO",
                 text: "<strong>Procurar:</strong> Fraturas diafiárias do rádio e da ulna; Fraturas de ambos os ossos associadas à luxações (Galeazzi - luxação da radio-ulnar distal | Monteggia - luxação da cabeçca do rádio)",
-                images: ["https://i.imgur.com/NxyA4yH.jpeg", "https://i.imgur.com/0Hx8697.jpeg"]
+                images: ["https://i.imgur.com/NxyA4yH.jpeg", "https://i.imgur.com/0Hx8697.jpeg"],
+                caption: "Fratura dos ossos do antebraço pediátrico"
             },
             "img-elbow": {
                 type: "image-modal",
                 title: "COTOVELO",
                 text: "<strong>Procurar:</strong> Fraturas da cabeça do rádio, olécrano e do úmero distal.",
-                images: ["https://i.imgur.com/5Z627F3.png", "https://i.imgur.com/dgIEfT6.png"]
+                images: ["https://i.imgur.com/5Z627F3.png", "https://i.imgur.com/dgIEfT6.png"],
+                caption: "Fratura da cabeça do rádio"
             },
             "img-arm": {
                 type: "image-modal",
                 title: "BRAÇO",
                 text: "<strong>Procurar:</strong> Fraturas diafisárias: Atenção para lesão do nervo radial (mão caída)",
-                images: ["https://i.imgur.com/WQDGdS1.jpeg", "https://i.imgur.com/JJCItTu.jpeg"]
+                images: ["https://i.imgur.com/WQDGdS1.jpeg", "https://i.imgur.com/JJCItTu.jpeg"],
+                caption: "Fratura diafisária do úmero"
             },
             "img-shoulder": {
                 type: "image-modal",
                 title: "OMBRO",
                 text: "<strong>Procurar:</strong> Fraturas do úmero proximal, Fraturas da clavícula, luxação glenoumeral, luxação acromioclavicular.",
-                images: ["https://i.imgur.com/3aL1eHE.png", "https://i.imgur.com/yz0KVd2.png"]
+                images: ["https://i.imgur.com/3aL1eHE.png", "https://i.imgur.com/yz0KVd2.png"],
+                caption: "Fratura do úmero proximal pediárico"
             },
             "img-pelvis": {
                 type: "image-modal",
                 title: "BACIA",
                 text: "<strong>Procurar: Fraturas da Pelve:</strong> Ramos pubianos, ísquio, ilíaco, acetábulo. Avaliar integridade do anel pélvico. <strong>Fraturas do Colo do Fêmur, Transtrocantéricas e Subtrocantéricas.</strong>",
-                images: ["https://i.imgur.com/vmxFGD8.png"]
+                images: ["https://i.imgur.com/vmxFGD8.png"],
+                caption: "Fratura transtrocantérica esquerda"
             },
             "img-foot": {
                 type: "image-modal",
                 title: "PÉ",
                 text: "<strong>Procurar:</strong> Fraturas (calcâneo, tálus, metatarsais – base do 5º, falanges). Luxações (tarsometatarsais e interfalangeadas).",
-                images: ["https://i.imgur.com/OtuU801.png", "https://i.imgur.com/ACMmBaT.png", "https://i.imgur.com/lu9f8H0.png"]
+                images: ["https://i.imgur.com/OtuU801.png", "https://i.imgur.com/ACMmBaT.png", "https://i.imgur.com/lu9f8H0.png"],
+                caption: "Fratura da base do 5º metatarsiano"
             },
             // Placeholders
             "img-cspine": { type: "image-modal", title: "COLUNA CERVICAL", text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória.", images: [] },
@@ -1120,9 +1128,16 @@
                         img.className = "w-full rounded-lg shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity mb-2";
                         img.onclick = () => openZoom(imgUrl);
                         imageContainer.appendChild(img);
-                        
-                        // Add Caption if it's the last image and caption exists (not implemented yet, structure ready)
                     });
+                    
+                    // Add Caption if it's available and after last image
+                    if (data.caption) {
+                         const captionEl = document.createElement('p');
+                         captionEl.className = "text-xs text-gray-500 italic text-right mt-1";
+                         captionEl.innerText = data.caption;
+                         imageContainer.appendChild(captionEl);
+                    }
+
                 } else {
                     const placeholder = document.createElement('div');
                     placeholder.className = "p-8 bg-gray-100 rounded text-center text-gray-500 italic text-sm border-2 border-dashed border-gray-300";
