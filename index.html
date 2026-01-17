@@ -905,7 +905,7 @@
         </p>
     </footer>
 
-    <!-- Info Modal -->
+    <!-- Info Modal (Texto) -->
     <div id="infoModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity opacity-0" aria-hidden="true">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-md transform scale-95 transition-transform duration-300" id="modalPanel">
             <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-military-surface-container rounded-t-xl">
@@ -925,9 +925,9 @@
         </div>
     </div>
 
-    <!-- Image Modal (Large) -->
-    <div id="imageModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4 transition-opacity opacity-0" aria-hidden="true" onclick="closeImageModal()">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md md:max-w-lg transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]">
+    <!-- Image Modal (Detailed) -->
+    <div id="imageModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4 transition-opacity opacity-0" aria-hidden="true">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md md:max-w-lg transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]" id="imageModalPanel">
             <!-- Header -->
             <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-military-surface-container rounded-t-xl shrink-0">
                 <h3 id="imageModalTitle" class="font-display font-bold text-military-900 text-lg"></h3>
@@ -938,7 +938,7 @@
             
             <!-- Content -->
             <div class="p-6 overflow-y-auto">
-                <p id="imageModalText" class="text-sm text-gray-700 font-sans leading-relaxed mb-4"></p>
+                <div id="imageModalText" class="text-sm text-gray-700 font-sans leading-relaxed mb-4"></div>
                 <div id="imageContainer" class="flex flex-col gap-4">
                     <!-- Imagens injetadas via JS -->
                 </div>
@@ -1027,7 +1027,7 @@
                     <p class="mt-2">Paradoxalmente, o consumo excessivo de plaquetas e fatores de coagulação durante este processo leva a um risco elevado de <strong>sangramentos graves</strong>.</p>
                 `
             },
-            // Dados para o modal de imagem
+            // Dados para o modal de imagem (Radiografia)
             "radiography-alert": {
                 type: "image-modal",
                 title: "Erro Diagnóstico em Radiografia",
@@ -1037,57 +1037,57 @@
             "img-hand": {
                 type: "image-modal",
                 title: "MÃO",
-                text: "Fraturas de falange, colo do 5º metacarpo (Boxer) e base do 1º metacarpo (Bennet).",
+                text: "<strong>Procurar:</strong> Fraturas de falange, colo do 5º metacarpo (Boxer) e base do 1º metacarpo (Bennet).",
                 images: ["https://i.imgur.com/TwwicFw.jpeg", "https://i.imgur.com/bN3LzqN.jpeg"]
             },
             "img-wrist": {
                 type: "image-modal",
                 title: "PUNHO",
-                text: "Fraturas do rádio distal: desvio dorsal (Colles), desvio volar (Smith), cisalhamento volar (Barton)",
+                text: "<strong>Procurar:</strong> Fraturas do rádio distal: desvio dorsal (Colles), desvio volar (Smith), cisalhamento volar (Barton)",
                 images: ["https://i.imgur.com/ljJvbhW.jpeg", "https://i.imgur.com/bTsfKsS.jpeg"]
             },
             "img-forearm": {
                 type: "image-modal",
                 title: "ANTEBRAÇO",
-                text: "Fraturas diafiárias do rádio e da ulna; Fraturas de ambos os ossos associadas à luxações (Galeazzi - luxação da radio-ulnar distal | Monteggia - luxação da cabeçca do rádio)",
+                text: "<strong>Procurar:</strong> Fraturas diafiárias do rádio e da ulna; Fraturas de ambos os ossos associadas à luxações (Galeazzi - luxação da radio-ulnar distal | Monteggia - luxação da cabeçca do rádio)",
                 images: ["https://i.imgur.com/NxyA4yH.jpeg", "https://i.imgur.com/0Hx8697.jpeg"]
             },
             "img-elbow": {
                 type: "image-modal",
                 title: "COTOVELO",
-                text: "Fraturas da cabeça do rádio, olécrano e do úmero distal.",
+                text: "<strong>Procurar:</strong> Fraturas da cabeça do rádio, olécrano e do úmero distal.",
                 images: ["https://i.imgur.com/5Z627F3.png", "https://i.imgur.com/dgIEfT6.png"]
             },
             "img-arm": {
                 type: "image-modal",
                 title: "BRAÇO",
-                text: "Fraturas diafisárias: Atenção para lesão do nervo radial (mão caída)",
+                text: "<strong>Procurar:</strong> Fraturas diafisárias: Atenção para lesão do nervo radial (mão caída)",
                 images: ["https://i.imgur.com/WQDGdS1.jpeg", "https://i.imgur.com/JJCItTu.jpeg"]
             },
             "img-shoulder": {
                 type: "image-modal",
                 title: "OMBRO",
-                text: "Fraturas do úmero proximal, Fraturas da clavícula, luxação glenoumeral, luxação acromioclavicular.",
+                text: "<strong>Procurar:</strong> Fraturas do úmero proximal, Fraturas da clavícula, luxação glenoumeral, luxação acromioclavicular.",
                 images: ["https://i.imgur.com/3aL1eHE.png", "https://i.imgur.com/yz0KVd2.png"]
             },
             "img-pelvis": {
                 type: "image-modal",
                 title: "BACIA",
-                text: "<strong>Fraturas da Pelve:</strong> Ramos pubianos, ísquio, ilíaco, acetábulo. Avaliar integridade do anel pélvico. <strong>Fraturas do Colo do Fêmur, Transtrocantéricas e Subtrocantéricas.</strong>",
+                text: "<strong>Procurar: Fraturas da Pelve:</strong> Ramos pubianos, ísquio, ilíaco, acetábulo. Avaliar integridade do anel pélvico. <strong>Fraturas do Colo do Fêmur, Transtrocantéricas e Subtrocantéricas.</strong>",
                 images: ["https://i.imgur.com/vmxFGD8.png"]
             },
             "img-foot": {
                 type: "image-modal",
                 title: "PÉ",
-                text: "Fraturas (calcâneo, tálus, metatarsais – base do 5º, falanges). Luxações (tarsometatarsais e interfalangeadas).",
+                text: "<strong>Procurar:</strong> Fraturas (calcâneo, tálus, metatarsais – base do 5º, falanges). Luxações (tarsometatarsais e interfalangeadas).",
                 images: ["https://i.imgur.com/OtuU801.png", "https://i.imgur.com/ACMmBaT.png", "https://i.imgur.com/lu9f8H0.png"]
             },
-            // Placeholders para itens sem imagem
-            "img-cspine": { type: "image-modal", title: "COLUNA CERVICAL", text: "Procurar: descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória.", images: [] },
-            "img-tspine": { type: "image-modal", title: "COLUNA TORACOLOMBAR", text: "Procurar: descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória", images: [] },
-            "img-knee": { type: "image-modal", title: "JOELHO", text: "<strong>Fraturas:</strong> Patela, côndilos femorais, platôs tibiais, cabeça da fíbula. <strong>Luxação Patelar:</strong> Deslocamento lateral. <strong>Derrame</strong>", images: [] },
-            "img-leg": { type: "image-modal", title: "PERNA", text: "<strong>Fraturas:</strong> Isoladas ou combinadas da tíbia e fíbula.", images: [] },
-            "img-ankle": { type: "image-modal", title: "TORNOZELO", text: "Fraturas Maleolares (medial, lateral, posterior).", images: [] }
+            // Placeholders
+            "img-cspine": { type: "image-modal", title: "COLUNA CERVICAL", text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória.", images: [] },
+            "img-tspine": { type: "image-modal", title: "COLUNA TORACOLOMBAR", text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória", images: [] },
+            "img-knee": { type: "image-modal", title: "JOELHO", text: "<strong>Procurar:</strong> Fraturas: Patela, côndilos femorais, platôs tibiais, cabeça da fíbula. Luxação Patelar.", images: [] },
+            "img-leg": { type: "image-modal", title: "PERNA", text: "<strong>Procurar:</strong> Fraturas: Isoladas ou combinadas da tíbia e fíbula.", images: [] },
+            "img-ankle": { type: "image-modal", title: "TORNOZELO", text: "<strong>Procurar:</strong> Fraturas Maleolares (medial, lateral, posterior).", images: [] }
         };
 
         const modal = document.getElementById('infoModal');
@@ -1096,6 +1096,7 @@
         const modalContent = document.getElementById('modalContent');
         
         const imageModal = document.getElementById('imageModal');
+        const imageModalPanel = document.getElementById('imageModalPanel');
         const imageModalTitle = document.getElementById('imageModalTitle');
         const imageModalText = document.getElementById('imageModalText');
         const imageContainer = document.getElementById('imageContainer');
@@ -1108,33 +1109,35 @@
 
             if (data.type === 'image-modal') {
                 imageModalTitle.innerText = data.title;
-                imageModalText.innerHTML = data.text; // Allows HTML like <strong>
+                imageModalText.innerHTML = data.text; 
                 
                 // Clear and populate images
                 imageContainer.innerHTML = '';
                 if (data.images && data.images.length > 0) {
-                    data.images.forEach(imgUrl => {
+                    data.images.forEach((imgUrl, index) => {
                         const img = document.createElement('img');
                         img.src = imgUrl;
-                        img.className = "w-full rounded-lg shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity";
+                        img.className = "w-full rounded-lg shadow-sm cursor-zoom-in hover:opacity-95 transition-opacity mb-2";
                         img.onclick = () => openZoom(imgUrl);
                         imageContainer.appendChild(img);
+                        
+                        // Add Caption if it's the last image and caption exists (not implemented yet, structure ready)
                     });
                 } else {
                     const placeholder = document.createElement('div');
-                    placeholder.className = "p-4 bg-gray-100 rounded text-center text-gray-500 italic text-sm";
-                    placeholder.innerText = "Imagem de referência não disponível.";
+                    placeholder.className = "p-8 bg-gray-100 rounded text-center text-gray-500 italic text-sm border-2 border-dashed border-gray-300";
+                    placeholder.innerHTML = '<span class="material-symbols-rounded text-4xl block mb-2 opacity-50">image_not_supported</span>Imagem de referência não disponível.';
                     imageContainer.appendChild(placeholder);
                 }
 
                 imageModal.classList.remove('hidden');
                 setTimeout(() => {
                     imageModal.classList.remove('opacity-0');
-                    imageModal.querySelector('div').classList.remove('scale-95');
-                    imageModal.querySelector('div').classList.add('scale-100');
+                    imageModalPanel.classList.remove('scale-95');
+                    imageModalPanel.classList.add('scale-100');
                 }, 10);
             } else {
-                // Text modal (Rabdomiólise)
+                // Text modal
                 modalTitle.innerText = data.title;
                 modalContent.innerHTML = data.content;
 
@@ -1158,10 +1161,11 @@
 
         function closeImageModal() {
             imageModal.classList.add('opacity-0');
-            imageModal.querySelector('div').classList.remove('scale-100');
-            imageModal.querySelector('div').classList.add('scale-95');
+            imageModalPanel.classList.remove('scale-100');
+            imageModalPanel.classList.add('scale-95');
             setTimeout(() => {
                 imageModal.classList.add('hidden');
+                imageContainer.innerHTML = ''; // Clear content
             }, 300);
         }
 
