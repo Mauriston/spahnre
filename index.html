@@ -514,7 +514,12 @@
             <div class="bg-military-red/5 border-l-4 border-military-red rounded-xl p-6 shadow-md3-elevated text-center">
                 <span class="material-symbols-rounded text-military-red text-4xl mb-2">grid_view</span>
                 <h2 class="font-display font-bold text-military-red text-xl uppercase mb-2">Regra Fundamental</h2>
-                <p class="text-lg font-bold text-military-900">Mínimo de 2 Incidências Ortogonais</p>
+                <div class="flex items-center justify-center gap-2">
+                    <p class="text-lg font-bold text-military-900">Mínimo de 2 Incidências Ortogonais</p>
+                    <button onclick="openModal('radiography-alert')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none" aria-label="Ver exemplo de erro diagnóstico">
+                        <span class="material-symbols-rounded text-2xl">image</span>
+                    </button>
+                </div>
                 <p class="text-xs text-gray-600 mt-2">Para articulações, sempre avaliar 3 ou 4 incidências.</p>
             </div>
 
@@ -524,11 +529,14 @@
                     <span class="material-symbols-rounded mr-2 text-military-900">fact_check</span>
                     <h3 class="font-display font-bold text-military-900">Princípios Gerais</h3>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
-                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>Incluir Articulações:</strong> Visualizar articulação acima e abaixo em ossos longos.</span></div>
-                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>Comparação:</strong> Útil em crianças ou dúvidas anatômicas (lado contralateral).</span></div>
-                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>História Clínica:</strong> Sempre correlacionar a imagem com o ponto de dor máxima.</span></div>
-                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-sm mt-1">lightbulb</span> <span><strong>Dúvida?</strong> Solicite avaliação do especialista.</span></div>
+                <div class="grid grid-cols-1 gap-3 text-sm text-gray-700">
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>1. Duas Incidências:</strong> Mínimo de duas vistas perpendiculares entre si (AP e Perfil).</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>2. Incluir Articulações:</strong> Em ossos longos, incluir a articulação proximal e distal.</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>3. Comparação:</strong> Radiografar o lado oposto em crianças ou dúvidas anatômicas.</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>4. História Clínica:</strong> Correlacionar a imagem com o ponto de dor máxima.</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>5. Reavaliar:</strong> Se a clínica sugere fratura e o RX é normal, tratar como fratura e repetir em 7-10 dias.</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>6. Qualidade:</strong> Não aceitar exames de má qualidade técnica.</span></div>
+                    <div class="flex items-start gap-2"><span class="material-symbols-rounded text-military-green text-sm mt-1">check_circle</span> <span><strong>7. Sistematização:</strong> Avaliar alinhamento, osso, cartilagem e partes moles (ABCS).</span></div>
                 </div>
             </div>
 
@@ -800,6 +808,17 @@
         </div>
     </div>
 
+    <!-- Image Modal (Large) -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4 transition-opacity opacity-0" aria-hidden="true" onclick="closeImageModal()">
+        <div class="relative w-full max-w-4xl h-full flex flex-col items-center justify-center">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white hover:text-military-gold transition-colors z-[70]">
+                <span class="material-symbols-rounded text-4xl">close</span>
+            </button>
+            <img id="imageModalSrc" src="" alt="Imagem Ampliada" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+            <p id="imageModalCaption" class="text-white mt-4 text-center font-sans text-sm md:text-base max-w-2xl bg-black/50 p-2 rounded"></p>
+        </div>
+    </div>
+
     <script>
         mermaid.initialize({ startOnLoad: true });
 
@@ -865,6 +884,13 @@
                     <p class="mt-2">Resulta na formação disseminada de microtrombos na circulação, causando isquemia tecidual e disfunção de múltiplos órgãos.</p>
                     <p class="mt-2">Paradoxalmente, o consumo excessivo de plaquetas e fatores de coagulação durante este processo leva a um risco elevado de <strong>sangramentos graves</strong>.</p>
                 `
+            },
+            // Novo item para Radiografia - Alerta
+            "radiography-alert": {
+                title: "Erro Diagnóstico em Radiografia",
+                type: "image",
+                src: "https://i.imgur.com/tbIFTWS.png",
+                caption: "Observe as radiografias a seguir que mostram fraturas dos 2º e 3º metatarsianos e o elevado risco de erro diagnóstico ao avaliar apenas a incidência em AP na figura A."
             }
         };
 
@@ -872,21 +898,35 @@
         const modalPanel = document.getElementById('modalPanel');
         const modalTitle = document.getElementById('modalTitle');
         const modalContent = document.getElementById('modalContent');
+        const imageModal = document.getElementById('imageModal');
+        const imageModalSrc = document.getElementById('imageModalSrc');
+        const imageModalCaption = document.getElementById('imageModalCaption');
 
         function openModal(key) {
             const data = modalData[key];
             if (!data) return;
 
-            modalTitle.innerText = data.title;
-            modalContent.innerHTML = data.content;
+            // Check if it's an image modal type
+            if (data.type === 'image') {
+                imageModalSrc.src = data.src;
+                imageModalCaption.innerText = data.caption;
+                imageModal.classList.remove('hidden');
+                setTimeout(() => {
+                    imageModal.classList.remove('opacity-0');
+                }, 10);
+            } else {
+                // Text modal
+                modalTitle.innerText = data.title;
+                modalContent.innerHTML = data.content;
 
-            modal.classList.remove('hidden');
-            // Small timeout for transition
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalPanel.classList.remove('scale-95');
-                modalPanel.classList.add('scale-100');
-            }, 10);
+                modal.classList.remove('hidden');
+                // Small timeout for transition
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalPanel.classList.remove('scale-95');
+                    modalPanel.classList.add('scale-100');
+                }, 10);
+            }
         }
 
         function closeModal() {
@@ -899,6 +939,14 @@
             }, 300);
         }
 
+        function closeImageModal() {
+            imageModal.classList.add('opacity-0');
+            setTimeout(() => {
+                imageModal.classList.add('hidden');
+                imageModalSrc.src = ""; // Clear src
+            }, 300);
+        }
+
         // Close on click outside
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
@@ -906,8 +954,9 @@
 
         // Close on ESC
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
+            if (e.key === 'Escape') {
+                if (!modal.classList.contains('hidden')) closeModal();
+                if (!imageModal.classList.contains('hidden')) closeImageModal();
             }
         });
 
