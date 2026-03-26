@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Protocolos Clínicos HNRe</title>
+    
+    <!-- Título do App -->
+    <title>Bizus Ortop Online</title>
+    
+    <!-- Meta Tags para Compartilhamento (WhatsApp, Telegram, etc.) -->
+    <meta property="og:title" content="Bizus Ortop">
+    <meta property="og:description" content="Radiografias ortopédicas, Lombalgia, Pré-op e outros...">
+    <meta property="og:image" content="https://i.imgur.com/MR53HMG.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://i.imgur.com/MR53HMG.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,17 +93,12 @@
             </button>
             <div>
                 <h1 id="header-title" class="font-display font-bold text-lg md:text-xl uppercase tracking-wide leading-tight text-military-gold">
-                    Rabdomiólise em Militares
+                    Radiografia Ortopédica
                 </h1>
                 <p id="header-subtitle" class="font-display font-semibold text-[10px] md:text-xs text-gray-200 tracking-wider uppercase">
-                    DIAGNÓSTICO E MANEJO
+                    AVALIAÇÃO NA EMERGÊNCIA
                 </p>
             </div>
-        </div>
-        <!-- Referências posicionadas à direita no desktop -->
-        <div class="hidden md:block text-right text-[10px] text-gray-400 font-sans">
-             <p>Ref: Long et al. (2019)</p>
-             <p>& Mao et al. (2021)</p>
         </div>
     </header>
 
@@ -101,7 +106,7 @@
     <div id="overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/50 z-40 hidden transition-opacity opacity-0 no-print"></div>
     <aside id="sidebar" class="fixed top-0 left-0 h-full w-80 bg-military-surface shadow-2xl z-50 sidebar-closed flex flex-col no-print">
         <div class="bg-military-900 p-6 flex justify-between items-center text-white">
-            <h2 class="font-display font-bold text-xl text-military-gold">Protocolos HNRe</h2>
+            <h2 class="font-display font-bold text-xl text-military-gold">Bizus Ortop</h2>
             <button onclick="toggleMenu()" class="text-white hover:text-military-gold">
                 <span class="material-symbols-rounded">close_small</span>
             </button>
@@ -128,7 +133,7 @@
         <!-- ================================================================================= -->
         <!-- VIEW 1: RABDOMIÓLISE -->
         <!-- ================================================================================= -->
-        <section id="view-rhabdo" class="view-section space-y-4 md:space-y-6">
+        <section id="view-rhabdo" class="view-section hidden space-y-4 md:space-y-6">
             
             <!-- NOVO: Definição de Rabdomiólise Card -->
             <div class="bg-military-surface-container rounded-xl p-4 shadow-md3-elevated flex items-start gap-4 border-l-4 border-military-gold order-1 lg:order-none">
@@ -515,10 +520,9 @@
         <!-- ================================================================================= -->
         <!-- VIEW 2: RADIOGRAFIA ORTOPÉDICA -->
         <!-- ================================================================================= -->
-        <section id="view-radio" class="view-section hidden space-y-6">
+        <section id="view-radio" class="view-section space-y-6">
             <!-- Regra Fundamental (Estilo Ajustado para Alerta Vermelho) -->
             <div class="bg-military-red/5 border-l-4 border-military-red rounded-xl p-6 shadow-md3-elevated text-center">
-                <!-- Ícone removido conforme solicitado -->
                 <h2 class="font-display font-bold text-military-red text-xl uppercase mb-2">Regra Fundamental</h2>
                 <div class="flex items-center justify-center gap-2">
                     <p class="text-lg font-bold text-military-900">Mínimo de 2 Incidências Ortogonais</p>
@@ -526,7 +530,6 @@
                         <span class="material-symbols-rounded icon-light text-2xl">photo_library</span>
                     </button>
                 </div>
-                <!-- Texto removido conforme solicitado -->
             </div>
 
             <!-- Princípios -->
@@ -551,16 +554,15 @@
                             <span class="font-bold text-military-900">Dúvidas: faça contato com os Ortopedistas de bordo:</span>
                             <a href="https://wa.me/5581986541187" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (Md) Mauriston &nbsp;&nbsp;&nbsp;</span>
+                                <span>CT (Md) MAURISTON &nbsp;&nbsp;&nbsp;</span>
                             </a>
-                            </a>
-                            <a href="https://wa.me/5581991060899" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
+                            <a href="https://wa.me/558199106-0899" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (Md) Mademann &nbsp;&nbsp;&nbsp;</span>
+                                <span>CT (Md) MADEMANN &nbsp;&nbsp;&nbsp;</span>
                             </a>
                             <a href="https://wa.me/5581992931840" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (RM2-Md) Júlio César &nbsp;&nbsp;&nbsp;</span>
+                                <span>CT (RM2-Md) JÚLIO CÉSAR &nbsp;&nbsp;&nbsp;</span>
                             </a>
                         </div>
                     </div>
@@ -906,7 +908,7 @@
     <!-- Alterado pb-4 para pb-2 para reduzir o espaço inferior no mobile -->
     <footer class="max-w-7xl mx-auto p-4 text-center pb-2 md:pb-4 no-print">
         <p class="text-xs text-gray-400 font-sans">
-            &copy;2026 CT (Md) Mauriston. Powered by Gemini Ultra.
+            &copy;2026 CT (Md) Mauriston. Powered by Gemini.
         </p>
     </footer>
 
@@ -1042,7 +1044,7 @@
             "img-hand": {
                 type: "image-modal",
                 title: "MÃO",
-                text: "<strong>Procurar:</strong> Fraturas de falange, colo do 5º metacarpo (Boxer) e base do 1º metacarpo (Bennet).",
+                text: "<strong>Procurar:</strong> Fraturas de falange, colo do 5º metacarpo (Boxer) e base do 1º metacarpo (Bennet). Luxações interfalangeanas.",
                 images: ["https://i.imgur.com/TwwicFw.jpeg", "https://i.imgur.com/bN3LzqN.jpeg"],
                 caption: "Fraturas das falanges proximais dos 2º e 3º QDE"
             },
@@ -1079,7 +1081,21 @@
                 title: "OMBRO",
                 text: "<strong>Procurar:</strong> Fraturas do úmero proximal, Fraturas da clavícula, luxação glenoumeral, luxação acromioclavicular.",
                 images: ["https://i.imgur.com/1L9svSW.jpeg", "https://i.imgur.com/lYt1Ab2.jpeg"],
-                caption: "Luxação glemoumeral anterior"
+                caption: "Luxação glenoumeral anterior"
+            },
+            "img-cspine": {
+                type: "image-modal", 
+                title: "COLUNA CERVICAL", 
+                text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória.", 
+                images: ["https://i.imgur.com/5b6PISy.jpeg", "https://i.imgur.com/UoFWp7M.jpeg"],
+                caption: "Fratura-luxação C5-C6" 
+            },
+            "img-tspine": {
+                type: "image-modal", 
+                title: "COLUNA TORACOLOMBAR", 
+                text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória", 
+                images: ["https://i.imgur.com/V3k3gAI.jpeg", "https://i.imgur.com/dR58o9Y.jpeg"],
+                caption: "Fratura toracolombar por insuficiência (osteoporose)" 
             },
             "img-pelvis": {
                 type: "image-modal",
@@ -1088,19 +1104,34 @@
                 images: ["https://i.imgur.com/vmxFGD8.png"],
                 caption: "Fratura transtrocantérica esquerda"
             },
+            "img-knee": {
+                type: "image-modal", 
+                title: "JOELHO", 
+                text: "<strong>Procurar: Fraturas:</strong> Patela, côndilos femorais, platôs tibiais, cabeça da fíbula. Luxação Patelar:", 
+                images: ["https://i.imgur.com/yU1O5ok.png", "https://i.imgur.com/QxpzfJN.png"],
+                caption: "Fratura do planalto tibial" 
+            },
+            "img-leg": {
+                type: "image-modal", 
+                title: "PERNA", 
+                text: "<strong>Procurar:</strong> Fraturas: Isoladas ou combinadas da tíbia e fíbula.", 
+                images: ["https://i.imgur.com/UOpPUvb.png", "https://i.imgur.com/cVMUsgz.png"],
+                caption: "Fratura diafisária de tíbia" 
+            },
+            "img-ankle": {
+                type: "image-modal", 
+                title: "TORNOZELO", 
+                text: "<strong>Procurar:</strong> Fraturas Maleolares (medial, lateral, posterior).", 
+                images: ["https://i.imgur.com/HKOoJ6O.png", "https://i.imgur.com/byrNfNh.png"],
+                caption: "Fratura bimaleolar" 
+            },
             "img-foot": {
                 type: "image-modal",
                 title: "PÉ",
                 text: "<strong>Procurar:</strong> Fraturas (calcâneo, tálus, metatarsais – base do 5º, falanges). Luxações (tarsometatarsais e interfalangeadas).",
                 images: ["https://i.imgur.com/OtuU801.png", "https://i.imgur.com/ACMmBaT.png", "https://i.imgur.com/lu9f8H0.png"],
                 caption: "Fratura da base do 5º metatarsiano"
-            },
-            // Placeholders
-            "img-cspine": { type: "image-modal", title: "COLUNA CERVICAL", text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória.", images: [] },
-            "img-tspine": { type: "image-modal", title: "COLUNA TORACOLOMBAR", text: "<strong>Procurar:</strong> descontinuidade cortical, perda da altura ou desalinhamentos no perfil. Com suspeitas elevadas ou confirmadas de fraturas TC obrigatória", images: [] },
-            "img-knee": { type: "image-modal", title: "JOELHO", text: "<strong>Procurar:</strong> Fraturas: Patela, côndilos femorais, platôs tibiais, cabeça da fíbula. Luxação Patelar.", images: [] },
-            "img-leg": { type: "image-modal", title: "PERNA", text: "<strong>Procurar:</strong> Fraturas: Isoladas ou combinadas da tíbia e fíbula.", images: [] },
-            "img-ankle": { type: "image-modal", title: "TORNOZELO", text: "<strong>Procurar:</strong> Fraturas Maleolares (medial, lateral, posterior).", images: [] }
+            }
         };
 
         const modal = document.getElementById('infoModal');
@@ -1138,7 +1169,7 @@
                     // Add Caption if it's available and after last image
                     if (data.caption) {
                          const captionEl = document.createElement('p');
-                         captionEl.className = "text-xs text-gray-500 italic text-right mt-1";
+                         captionEl.className = "text-sm text-gray-400 italic text-right mt-2 font-sans";
                          captionEl.innerText = data.caption;
                          imageContainer.appendChild(captionEl);
                     }
