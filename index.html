@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- Título do App -->
-    <title>Bizus Ortop Online</title>
+    <title>Bizus Ortop</title>
     
     <!-- Meta Tags para Compartilhamento (WhatsApp, Telegram, etc.) -->
-    <meta property="og:title" content="Bizus Ortop Online">
-    <meta property="og:description" content="Radiografias ortopédicas, Lombalgia, Pré-op e outros...">
+    <meta property="og:title" content="Bizus Ortop">
+    <meta property="og:description" content="Protocolos Clínicos e Ortopédicos - Diagnóstico e Manejo na Emergência">
     <meta property="og:image" content="https://i.imgur.com/MR53HMG.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -112,14 +112,17 @@
             </button>
         </div>
         <nav class="flex-1 overflow-y-auto p-4 space-y-2">
-            <button onclick="switchView('rhabdo')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
-                <span class="material-symbols-rounded text-military-gold">medical_services</span> Rabdomiólise
-            </button>
             <button onclick="switchView('radio')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
                 <span class="material-symbols-rounded text-military-gold">skeleton</span> Radiografia Ortopédica
             </button>
+            <button onclick="switchView('rhabdo')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
+                <span class="material-symbols-rounded text-military-gold">medical_services</span> Rabdomiólise
+            </button>
             <button onclick="switchView('lomb')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
                 <span class="material-symbols-rounded text-military-gold">personal_injury</span> Lombalgia Aguda
+            </button>
+            <button onclick="switchView('periop')" class="w-full text-left p-3 rounded-lg hover:bg-military-surface-container flex items-center gap-3 font-bold text-military-900 transition-colors border-l-4 border-transparent hover:border-military-gold">
+                <span class="material-symbols-rounded text-military-gold">health_and_safety</span> Cuidados Peri-Op
             </button>
         </nav>
         <div class="p-4 bg-gray-50 border-t border-gray-200 text-center">
@@ -131,394 +134,7 @@
     <main class="max-w-7xl mx-auto p-3 md:p-6 space-y-6 min-h-screen">
 
         <!-- ================================================================================= -->
-        <!-- VIEW 1: RABDOMIÓLISE -->
-        <!-- ================================================================================= -->
-        <section id="view-rhabdo" class="view-section hidden space-y-4 md:space-y-6">
-            
-            <!-- NOVO: Definição de Rabdomiólise Card -->
-            <div class="bg-military-surface-container rounded-xl p-4 shadow-md3-elevated flex items-start gap-4 border-l-4 border-military-gold order-1 lg:order-none">
-                <span class="material-symbols-rounded text-military-gold text-3xl mt-1">info</span>
-                <div>
-                    <h3 class="font-display font-bold text-military-900 text-sm uppercase mb-1">RABDOMIÓLISE</h3>
-                    <p class="text-sm text-military-900 leading-snug">
-                        Condição médica caracterizada pela <strong>degradação das células musculares (miócitos)</strong>, resultando na liberação de conteúdo intracelular (CK, mioglobina, eletrólitos) na circulação sistêmica, com risco potencial de <strong>Injúria Renal Aguda (IRA)</strong> e distúrbios eletrolíticos graves.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Section 1: Elevated Cards Stack -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                
-                <!-- Diagnosis -->
-                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full order-2 lg:order-none">
-                    <div class="flex items-center mb-3 text-military-900">
-                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">monitor_heart</span>
-                        <h2 class="font-display font-bold text-lg">Diagnóstico</h2>
-                    </div>
-                    <ul class="space-y-3 text-sm flex-grow">
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-military-green text-lg flex-shrink-0">check_circle</span>
-                            <span><strong>CK Total > 5x LSN</strong> (>1000 UI/L)</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-gray-500 text-lg flex-shrink-0">help</span>
-                            <span>Sintomas inespecíficos são comuns (náusea, febre).</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-military-red text-lg flex-shrink-0">cancel</span>
-                            <span class="leading-tight">NÃO excluir por Mioglobina negativa.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Alerta Tríade Clássica (Movido para cá no mobile via 'order-3') -->
-                <div class="bg-[#fff8f6] rounded-xl p-4 shadow-md3-elevated flex gap-3 order-3 lg:order-none col-span-1 md:col-span-3 lg:col-span-1 md:hidden lg:flex">
-                    <span class="material-symbols-rounded text-military-red">warning</span>
-                    <div>
-                        <h3 class="font-display font-bold text-military-red text-sm uppercase">Cuidado com a Tríade Clássica</h3>
-                        <div class="mt-1 text-sm text-[#410002]">
-                            <p>Dor + Fraqueza + Urina Escura simultâneos ocorrem em <span class="font-bold underline">menos de 10%</span> dos casos.</p>
-                            <p class="mt-1 font-bold">⛔ Não aguarde todos os sintomas.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Versão Desktop do Alerta (para manter layout grid correto no desktop) -->
-                 <div class="bg-[#fff8f6] rounded-xl p-4 shadow-md3-elevated gap-3 hidden md:flex lg:hidden col-span-3">
-                    <span class="material-symbols-rounded text-military-red">warning</span>
-                    <div>
-                        <h3 class="font-display font-bold text-military-red text-sm uppercase">Cuidado com a Tríade Clássica</h3>
-                        <div class="mt-1 text-sm text-[#410002]">
-                            <p>Dor + Fraqueza + Urina Escura simultâneos ocorrem em <span class="font-bold underline">menos de 10%</span> dos casos. <strong>⛔ Não aguarde todos os sintomas.</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Risk Profile -->
-                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full order-5 lg:order-none">
-                    <div class="flex items-center mb-3 text-military-900">
-                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">priority_high</span>
-                        <h2 class="font-display font-bold text-lg">Alto Risco</h2>
-                    </div>
-                    <div class="text-sm space-y-2">
-                        <p class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-sm">person</span>
-                            <span><strong>Recrutas:</strong> < 1 sem (OR 7.49)</span>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-sm">fitness_center</span>
-                            <span><strong>Físico:</strong> IMC > 24 ou Sedentário</span>
-                        </p>
-                        <p class="flex items-center gap-2">
-                            <span class="material-symbols-rounded text-sm">history</span>
-                            <span><strong>Histórico:</strong> Intermação prévia</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Section 2: Charts & Algorithm -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                
-                <!-- Risk Chart -->
-                <div class="bg-white p-5 rounded-xl shadow-md3-elevated order-1 lg:order-none">
-                    <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
-                        <span class="material-symbols-rounded mr-2 text-military-900">bar_chart</span>
-                        <h3 class="font-display font-bold text-military-900">Fatores de Impacto</h3>
-                    </div>
-                    
-                    <div class="space-y-5 text-xs md:text-sm">
-                        
-                        <!-- Fatores de Risco -->
-                        <div>
-                            <h4 class="font-display font-bold text-military-red text-xs uppercase mb-3 tracking-wider flex items-center gap-1">
-                                <span class="material-symbols-rounded text-sm">trending_up</span> Aumentam Risco
-                            </h4>
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="font-semibold text-gray-700">Ser Recruta</span>
-                                        <span class="font-bold text-military-red">OR 7.49</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-military-red h-2 rounded-full" style="width: 100%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="font-semibold text-gray-700">Sedentarismo</span>
-                                        <span class="font-bold text-military-red">OR 3.20</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-military-red h-2 rounded-full" style="width: 42%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Fatores de Proteção -->
-                        <div>
-                            <h4 class="font-display font-bold text-military-green text-xs uppercase mb-3 tracking-wider flex items-center gap-1">
-                                <span class="material-symbols-rounded text-sm">shield</span> Proteção
-                            </h4>
-                            <div class="space-y-3">
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="font-semibold text-gray-700">Hidratação Dia (>2L)</span>
-                                        <span class="font-bold text-military-green">OR 0.15</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-military-green h-2 rounded-full" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex justify-between mb-1">
-                                        <span class="font-semibold text-gray-700">Pré-Hidratação (1h)</span>
-                                        <span class="font-bold text-military-green">OR 0.33</span>
-                                    </div>
-                                    <div class="w-full bg-gray-200 rounded-full h-2">
-                                        <div class="bg-military-green h-2 rounded-full" style="width: 67%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Sinais de Alarme (Red Flags) Card -->
-                <div class="bg-military-red/5 border-l-4 border-military-red p-5 rounded-xl shadow-md3-elevated order-2 lg:order-none h-full">
-                    <div class="flex items-center mb-4">
-                        <span class="material-symbols-rounded mr-2 text-military-red text-2xl">warning</span>
-                        <h3 class="font-display font-bold text-military-red text-lg uppercase">Sinais de Alarme</h3>
-                    </div>
-                    <div class="text-sm text-military-900 space-y-3">
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
-                            <span class="flex items-center gap-2">
-                                <span class="material-symbols-rounded text-military-red">ecg_heart</span> 
-                                Hipercalemia Grave (>6.0/ECG)
-                            </span>
-                            <button onclick="openModal('hyperkalemia')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre Hipercalemia">
-                                <span class="material-symbols-rounded text-lg">help</span>
-                            </button>
-                        </p>
-                        
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
-                            <span class="material-symbols-rounded text-military-red">water_drop</span> 
-                            Anúria / Oligúria Refratária
-                        </p>
-
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
-                            <span class="flex items-center gap-2">
-                                <span class="material-symbols-rounded text-military-red">masks</span> 
-                                Síndrome Compartimental
-                            </span>
-                            <button onclick="openModal('compartment')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre Síndrome Compartimental">
-                                <span class="material-symbols-rounded text-lg">help</span>
-                            </button>
-                        </p>
-
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
-                            <span class="flex items-center gap-2">
-                                <span class="material-symbols-rounded text-military-red">bloodtype</span> 
-                                Coagulação Intravascular (CIVD)
-                            </span>
-                            <button onclick="openModal('dic')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre CIVD">
-                                <span class="material-symbols-rounded text-lg">help</span>
-                            </button>
-                        </p>
-
-                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
-                            <span class="material-symbols-rounded text-military-red">monitor_heart</span> 
-                            Instabilidade Hemodinâmica
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Score de McMahon Card (Agora order-3 no mobile) -->
-            <div class="bg-white rounded-xl shadow-md3-elevated p-5 overflow-hidden order-3 lg:order-none">
-                <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
-                    <span class="material-symbols-rounded mr-2 text-military-900">calculate</span>
-                    <h3 class="font-display font-bold text-military-900">Score de Risco de McMahon (Risco de Falência Renal/Morte)</h3>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                    <!-- Table Column -->
-                    <div>
-                        <table class="w-full text-left text-xs md:text-sm">
-                            <thead class="bg-military-surface-container text-military-900 font-bold uppercase">
-                                <tr>
-                                    <th class="p-2 rounded-tl-lg">Variável</th>
-                                    <th class="p-2 text-right rounded-tr-lg">Pontos</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-100">
-                                <tr><td class="p-2">Idade (anos): >50-70 / >70-80 / >80</td><td class="p-2 text-right font-bold">1.5 / 2.5 / 3.0</td></tr>
-                                <tr><td class="p-2">Sexo Feminino</td><td class="p-2 text-right font-bold">1.0</td></tr>
-                                <tr><td class="p-2">Creatinina (mg/dL): 1.4-2.2 / >2.2</td><td class="p-2 text-right font-bold">1.5 / 3.0</td></tr>
-                                <tr><td class="p-2">Cálcio Inicial < 7.5 mg/dL</td><td class="p-2 text-right font-bold">2.0</td></tr>
-                                <tr><td class="p-2">Fosfato Inicial: 4.0-5.4 / >5.4 mg/dL</td><td class="p-2 text-right font-bold">1.5 / 3.0</td></tr>
-                                <tr><td class="p-2">Bicarbonato Inicial < 19 mEq/L</td><td class="p-2 text-right font-bold">2.0</td></tr>
-                                <tr><td class="p-2">CK Inicial > 40.000 UI/L</td><td class="p-2 text-right font-bold">2.0</td></tr>
-                                <tr><td class="p-2">Etiologia NÃO (exer, statina, convulsão...)</td><td class="p-2 text-right font-bold">3.0</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Interpretation Column -->
-                    <div class="flex flex-col justify-center space-y-4">
-                        <div class="bg-green-50 border-l-4 border-military-green p-3 rounded">
-                            <h4 class="font-bold text-military-green text-sm uppercase mb-1">Baixo Risco (Score < 5)</h4>
-                            <p class="text-xs text-gray-600">Risco de RRT ou Morte: <strong>2.3%</strong></p>
-                        </div>
-                        <div class="bg-yellow-50 border-l-4 border-military-gold p-3 rounded">
-                            <h4 class="font-bold text-military-gold text-sm uppercase mb-1">Risco Intermediário (Score 5-9)</h4>
-                            <p class="text-xs text-gray-600">Considere monitorização intensiva.</p>
-                        </div>
-                        <div class="bg-red-50 border-l-4 border-military-red p-3 rounded">
-                            <h4 class="font-bold text-military-red text-sm uppercase mb-1">Alto Risco (Score > 10)</h4>
-                            <p class="text-xs text-gray-600">Risco de RRT ou Morte: <strong>61.2%</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Management (Moved here, before Algorithm) -->
-            <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col order-4 lg:order-none">
-                <div class="flex items-center mb-3 text-military-900">
-                    <span class="material-symbols-rounded mr-2 text-2xl text-military-green">bolt</span>
-                    <h2 class="font-display font-bold text-lg">Ação Imediata</h2>
-                </div>
-                <div class="text-center bg-military-surface-container p-3 rounded-lg mb-3">
-                    <p class="font-display font-bold text-xl text-military-green">Diurese ≥ 300 mL/h</p>
-                </div>
-                <p class="text-sm mb-1"><strong>Fluido:</strong> SF 0.9% ou Ringer.</p>
-                <p class="text-xs text-gray-500 italic">Evite Bicarbonato/Manitol de rotina.</p>
-            </div>
-
-            <!-- Algorithm (Moved here, before Checklist) -->
-            <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col order-5 lg:order-none col-span-1 lg:col-span-2">
-                <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
-                    <span class="material-symbols-rounded mr-2 text-military-900">account_tree</span>
-                    <h3 class="font-display font-bold text-military-900">Algoritmo de Decisão</h3>
-                </div>
-                
-                <div class="mermaid flex-grow overflow-x-auto pb-4 flex justify-center">
-                    graph TD
-                        A[Suspeita Clínica] --> B{CK > 5x LSN<br/>ou >1000?}
-                        B -- Não --> C[Investigar Outras Causas]
-                        B -- Sim --> D[<b>TRATAMENTO IMEDIATO</b>]
-                        D --> E[Reidratação IV]
-                        E --> F[Meta: Diurese 300mL/h]
-                        D --> G{Sinais Alarme?}
-                        G -- Sim --> H[<b>UTI / Intervenção</b>]
-                        G -- Não --> I{Critérios Alta?}
-                        I -- Sim --> J[Alta c/ Seguimento]
-                        I -- Não --> K[Internação Enfermaria]
-                        
-                        style D fill:#FAB932,stroke:#050f14,stroke-width:2px,color:#050f14
-                        style F fill:#078551,stroke:#050f14,stroke-width:2px,color:white
-                        style H fill:#ba1a1a,color:white
-                        style A fill:#f0f4f8,stroke:#050f14
-                        style B fill:#f0f4f8,stroke:#050f14
-                </div>
-            </div>
-
-            <!-- Section 3: MD3 Style Tabs Checklist -->
-            <div class="bg-white rounded-xl shadow-md3-elevated overflow-hidden print:border-2 print:border-black">
-                <div class="bg-military-900 p-4 flex justify-between items-center text-white">
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-rounded text-military-gold">checklist</span>
-                        <h3 class="font-display font-bold uppercase text-sm">Checklist: Conduta</h3>
-                    </div>
-                </div>
-                
-                <!-- MD3 Tabs -->
-                <div class="flex border-b border-gray-200 tab-buttons no-print">
-                    <button class="flex-1 py-3 text-sm font-bold text-military-green border-b-4 border-military-green bg-green-50/30 transition-colors" onclick="switchTab('alta', this)">
-                        Critérios de Alta
-                    </button>
-                    <button class="flex-1 py-3 text-sm font-bold text-gray-500 border-b-4 border-transparent hover:bg-gray-50 transition-colors" onclick="switchTab('internar', this)">
-                        Internação
-                    </button>
-                </div>
-
-                <div class="p-5 min-h-[180px]">
-                    <!-- Alta Content -->
-                    <div id="alta" class="tab-content">
-                        <h4 class="font-display font-bold text-military-green mb-3 text-sm hidden print:block">✅ Candidato à Alta</h4>
-                        <ul class="space-y-3 text-sm text-gray-700">
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Primeiro episódio.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Sintomas leves e etiologia clara.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span><strong>Sinais vitais normais.</strong></li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Rim e Eletrólitos normais.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Tolera hidratação oral.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Internação Content -->
-                    <div id="internar" class="tab-content hidden">
-                        <h4 class="font-display font-bold text-military-red mb-3 text-sm hidden print:block">🚨 Admissão Obrigatória</h4>
-                        <ul class="space-y-3 text-sm text-gray-700">
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Etiologia incerta ou recorrente.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Injúria Renal ou Hipercalemia.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Sinais vitais alterados.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Não tolera via oral.</li>
-                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Score Risco McMahon > 5.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- References Accordion (Elevated Style) -->
-            <div class="mt-8 no-print">
-                <details class="bg-white rounded-xl shadow-md3-elevated group overflow-hidden">
-                    <summary class="flex justify-between items-center cursor-pointer p-4 focus:outline-none hover:bg-gray-50 transition-colors">
-                        <h3 class="font-display font-bold text-military-900 text-xs uppercase tracking-wider flex items-center gap-2">
-                            <span class="material-symbols-rounded text-sm">menu_book</span>
-                            Referências Bibliográficas
-                        </h3>
-                        <span class="material-symbols-rounded text-gray-500 expand-icon transition-transform duration-300">expand_more</span>
-                    </summary>
-                    <div class="p-4 border-t border-gray-100 text-xs text-gray-600 bg-gray-50">
-                        <ul class="space-y-4">
-                            <li class="pl-2 border-l-2 border-military-gold">
-                                <p class="mb-1">Long, B., Koyfman, A., & Gottlieb, M. (2019). <strong>An evidence-based narrative review of the emergency department evaluation and management of rhabdomyolysis.</strong> <em>The American journal of emergency medicine</em>, 37(3), 518–523.</p>
-                                <div class="flex gap-4">
-                                    <a href="https://doi.org/10.1016/j.ajem.2018.12.061" target="_blank" class="text-military-green hover:text-military-900 hover:underline break-all block flex items-center gap-1">
-                                        <span class="material-symbols-rounded text-[10px]">open_in_new</span> Link DOI
-                                    </a>
-                                    <a href="https://drive.google.com/uc?export=download&id=1NI2_qWLpsScm6V4WQd-GJF-9T8QDcY29" target="_blank" class="text-military-green hover:text-military-900 hover:underline break-all block flex items-center gap-1">
-                                        <span class="material-symbols-rounded text-[10px]">download</span> Download Artigo
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="pl-2 border-l-2 border-military-gold">
-                                <p class="mb-1">Mao, H. D., Li, X., Liu, S. Y., Xing, L., Zhao, J. B., Tan, Z. J., Sun, H. L., & Song, Q. (2021). <strong>Exertional rhabdomyolysis in newly enrolled cadets of a military academy.</strong> <em>Muscle & nerve</em>, 64(3), 336–341.</p>
-                                <div class="flex gap-4">
-                                    <a href="https://doi.org/10.1002/mus.27355" target="_blank" class="text-military-green hover:text-military-900 hover:underline break-all block flex items-center gap-1">
-                                        <span class="material-symbols-rounded text-[10px]">open_in_new</span> Link DOI
-                                    </a>
-                                    <a href="https://drive.google.com/uc?export=download&id=1ZRu6_5Ku1DGzFbADEGch641-E1d5dL9J" target="_blank" class="text-military-green hover:text-military-900 hover:underline break-all block flex items-center gap-1">
-                                        <span class="material-symbols-rounded text-[10px]">download</span> Download Artigo
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <!-- Infográfico Complementar -->
-            <div class="mt-24 mb-4 no-print flex justify-center">
-                <img src="https://i.imgur.com/wjxT0G4.png" alt="Infográfico Complementar" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
-            </div>
-
-        </section>
-
-        <!-- ================================================================================= -->
-        <!-- VIEW 2: RADIOGRAFIA ORTOPÉDICA -->
+        <!-- VIEW 1: RADIOGRAFIA ORTOPÉDICA (AGORA É A INICIAL) -->
         <!-- ================================================================================= -->
         <section id="view-radio" class="view-section space-y-6">
             <!-- Regra Fundamental (Estilo Ajustado para Alerta Vermelho) -->
@@ -547,22 +163,18 @@
                     <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm flex-shrink-0">check_circle</span> <span><strong>6. Qualidade:</strong> Não aceitar exames de má qualidade técnica.</span></div>
                     <div class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm flex-shrink-0">check_circle</span> <span><strong>7. Sistematização:</strong> Avaliar alinhamento, osso, cartilagem e partes moles (ABCS).</span></div>
                     
-                    <!-- Novo Item 8 -->
+                    <!-- Item 8 -->
                     <div class="flex items-start gap-2 pt-2 border-t mt-1">
                         <span class="material-symbols-rounded text-military-gold text-sm flex-shrink-0 mt-1">help</span> 
                         <div class="flex flex-col gap-1 w-full">
                             <span class="font-bold text-military-900">Dúvidas: faça contato com os Ortopedistas de bordo:</span>
                             <a href="https://wa.me/5581986541187" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (Md) MAURISTON &nbsp;&nbsp;&nbsp;</span>
-                            </a>
-                            <a href="https://wa.me/558199106-0899" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (Md) MADEMANN &nbsp;&nbsp;&nbsp;</span>
+                                <span>CT (Md) Mauriston &nbsp;&nbsp;&nbsp;</span>
                             </a>
                             <a href="https://wa.me/5581992931840" target="_blank" class="flex items-center gap-2 text-military-green hover:underline">
                                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-4 h-4" alt="WhatsApp">
-                                <span>CT (RM2-Md) JÚLIO CÉSAR &nbsp;&nbsp;&nbsp;</span>
+                                <span>CT (RM2-Md) Júlio César &nbsp;&nbsp;&nbsp;</span>
                             </a>
                         </div>
                     </div>
@@ -707,7 +319,6 @@
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">person_alert</span> Dor desproporcional (Síndrome Compartimental?)</p>
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">block</span> Bloqueio Articular ou Instabilidade</p>
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">electrical_services</span> Déficit Neurovascular Distal</p>
-                    <!-- Novos itens movidos de Rabdomiólise -->
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">healing</span> Edema ou Equimoses</p>
                     <p class="flex items-center gap-2"><span class="material-symbols-rounded text-sm">bubble_chart</span> Crepitações</p>
                 </div>
@@ -778,6 +389,365 @@
         </section>
 
         <!-- ================================================================================= -->
+        <!-- VIEW 2: RABDOMIÓLISE -->
+        <!-- ================================================================================= -->
+        <section id="view-rhabdo" class="view-section hidden space-y-4 md:space-y-6">
+            
+            <!-- Definição de Rabdomiólise Card -->
+            <div class="bg-military-surface-container rounded-xl p-4 shadow-md3-elevated flex items-start gap-4 border-l-4 border-military-gold order-1 lg:order-none">
+                <span class="material-symbols-rounded text-military-gold text-3xl mt-1">info</span>
+                <div>
+                    <h3 class="font-display font-bold text-military-900 text-sm uppercase mb-1">RABDOMIÓLISE</h3>
+                    <p class="text-sm text-military-900 leading-snug">
+                        Condição médica caracterizada pela <strong>degradação das células musculares (miócitos)</strong>, resultando na liberação de conteúdo intracelular (CK, mioglobina, eletrólitos) na circulação sistêmica, com risco potencial de <strong>Injúria Renal Aguda (IRA)</strong> e distúrbios eletrolíticos graves.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section 1: Elevated Cards Stack -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Diagnosis -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full order-2 lg:order-none">
+                    <div class="flex items-center mb-3 text-military-900">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">monitor_heart</span>
+                        <h2 class="font-display font-bold text-lg">Diagnóstico</h2>
+                    </div>
+                    <ul class="space-y-3 text-sm flex-grow">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-military-green text-lg flex-shrink-0">check_circle</span>
+                            <span><strong>CK Total > 5x LSN</strong> (>1000 UI/L)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-gray-500 text-lg flex-shrink-0">help</span>
+                            <span>Sintomas inespecíficos são comuns (náusea, febre).</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-military-red text-lg flex-shrink-0">cancel</span>
+                            <span class="leading-tight">NÃO excluir por Mioglobina negativa.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Alerta Tríade Clássica -->
+                <div class="bg-[#fff8f6] rounded-xl p-4 shadow-md3-elevated flex gap-3 order-3 lg:order-none col-span-1 md:col-span-3 lg:col-span-1 md:hidden lg:flex">
+                    <span class="material-symbols-rounded text-military-red">warning</span>
+                    <div>
+                        <h3 class="font-display font-bold text-military-red text-sm uppercase">Cuidado com a Tríade Clássica</h3>
+                        <div class="mt-1 text-sm text-[#410002]">
+                            <p>Dor + Fraqueza + Urina Escura simultâneos ocorrem em <span class="font-bold underline">menos de 10%</span> dos casos.</p>
+                            <p class="mt-1 font-bold">⛔ Não aguarde todos os sintomas.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-[#fff8f6] rounded-xl p-4 shadow-md3-elevated gap-3 hidden md:flex lg:hidden col-span-3">
+                    <span class="material-symbols-rounded text-military-red">warning</span>
+                    <div>
+                        <h3 class="font-display font-bold text-military-red text-sm uppercase">Cuidado com a Tríade Clássica</h3>
+                        <div class="mt-1 text-sm text-[#410002]">
+                            <p>Dor + Fraqueza + Urina Escura simultâneos ocorrem em <span class="font-bold underline">menos de 10%</span> dos casos. <strong>⛔ Não aguarde todos os sintomas.</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Profile -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full order-5 lg:order-none">
+                    <div class="flex items-center mb-3 text-military-900">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">priority_high</span>
+                        <h2 class="font-display font-bold text-lg">Alto Risco</h2>
+                    </div>
+                    <div class="text-sm space-y-2">
+                        <p class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-sm">person</span>
+                            <span><strong>Recrutas:</strong> < 1 sem (OR 7.49)</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-sm">fitness_center</span>
+                            <span><strong>Físico:</strong> IMC > 24 ou Sedentário</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-sm">history</span>
+                            <span><strong>Histórico:</strong> Intermação prévia</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Charts & Algorithm -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <!-- Risk Chart -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated order-1 lg:order-none">
+                    <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
+                        <span class="material-symbols-rounded mr-2 text-military-900">bar_chart</span>
+                        <h3 class="font-display font-bold text-military-900">Fatores de Impacto</h3>
+                    </div>
+                    
+                    <div class="space-y-5 text-xs md:text-sm">
+                        <!-- Fatores de Risco -->
+                        <div>
+                            <h4 class="font-display font-bold text-military-red text-xs uppercase mb-3 tracking-wider flex items-center gap-1">
+                                <span class="material-symbols-rounded text-sm">trending_up</span> Aumentam Risco
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-semibold text-gray-700">Ser Recruta</span>
+                                        <span class="font-bold text-military-red">OR 7.49</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-military-red h-2 rounded-full" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-semibold text-gray-700">Sedentarismo</span>
+                                        <span class="font-bold text-military-red">OR 3.20</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-military-red h-2 rounded-full" style="width: 42%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fatores de Proteção -->
+                        <div>
+                            <h4 class="font-display font-bold text-military-green text-xs uppercase mb-3 tracking-wider flex items-center gap-1">
+                                <span class="material-symbols-rounded text-sm">shield</span> Proteção
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-semibold text-gray-700">Hidratação Dia (>2L)</span>
+                                        <span class="font-bold text-military-green">OR 0.15</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-military-green h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-semibold text-gray-700">Pré-Hidratação (1h)</span>
+                                        <span class="font-bold text-military-green">OR 0.33</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-military-green h-2 rounded-full" style="width: 67%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sinais de Alarme -->
+                <div class="bg-military-red/5 border-l-4 border-military-red p-5 rounded-xl shadow-md3-elevated order-2 lg:order-none h-full">
+                    <div class="flex items-center mb-4">
+                        <span class="material-symbols-rounded mr-2 text-military-red text-2xl">warning</span>
+                        <h3 class="font-display font-bold text-military-red text-lg uppercase">Sinais de Alarme</h3>
+                    </div>
+                    <div class="text-sm text-military-900 space-y-3">
+                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-rounded text-military-red">ecg_heart</span> 
+                                Hipercalemia Grave (>6.0/ECG)
+                            </span>
+                            <button onclick="openModal('hyperkalemia')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre Hipercalemia">
+                                <span class="material-symbols-rounded text-lg">help</span>
+                            </button>
+                        </p>
+                        
+                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
+                            <span class="material-symbols-rounded text-military-red">water_drop</span> 
+                            Anúria / Oligúria Refratária
+                        </p>
+
+                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-rounded text-military-red">masks</span> 
+                                Síndrome Compartimental
+                            </span>
+                            <button onclick="openModal('compartment')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre Síndrome Compartimental">
+                                <span class="material-symbols-rounded text-lg">help</span>
+                            </button>
+                        </p>
+
+                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm justify-start">
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-rounded text-military-red">bloodtype</span> 
+                                Coagulação Intravascular (CIVD)
+                            </span>
+                            <button onclick="openModal('dic')" class="text-military-red/70 hover:text-military-red transition-colors focus:outline-none ml-3" aria-label="Saiba mais sobre CIVD">
+                                <span class="material-symbols-rounded text-lg">help</span>
+                            </button>
+                        </p>
+
+                        <p class="font-bold flex items-center gap-2 p-2 bg-white rounded-lg border border-red-100 shadow-sm">
+                            <span class="material-symbols-rounded text-military-red">monitor_heart</span> 
+                            Instabilidade Hemodinâmica
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score de McMahon Card -->
+            <div class="bg-white rounded-xl shadow-md3-elevated p-5 overflow-hidden order-3 lg:order-none">
+                <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
+                    <span class="material-symbols-rounded mr-2 text-military-900">calculate</span>
+                    <h3 class="font-display font-bold text-military-900">Score de Risco de McMahon (Risco de Falência Renal/Morte)</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                        <table class="w-full text-left text-xs md:text-sm">
+                            <thead class="bg-military-surface-container text-military-900 font-bold uppercase">
+                                <tr>
+                                    <th class="p-2 rounded-tl-lg">Variável</th>
+                                    <th class="p-2 text-right rounded-tr-lg">Pontos</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr><td class="p-2">Idade (anos): >50-70 / >70-80 / >80</td><td class="p-2 text-right font-bold">1.5 / 2.5 / 3.0</td></tr>
+                                <tr><td class="p-2">Sexo Feminino</td><td class="p-2 text-right font-bold">1.0</td></tr>
+                                <tr><td class="p-2">Creatinina (mg/dL): 1.4-2.2 / >2.2</td><td class="p-2 text-right font-bold">1.5 / 3.0</td></tr>
+                                <tr><td class="p-2">Cálcio Inicial < 7.5 mg/dL</td><td class="p-2 text-right font-bold">2.0</td></tr>
+                                <tr><td class="p-2">Fosfato Inicial: 4.0-5.4 / >5.4 mg/dL</td><td class="p-2 text-right font-bold">1.5 / 3.0</td></tr>
+                                <tr><td class="p-2">Bicarbonato Inicial < 19 mEq/L</td><td class="p-2 text-right font-bold">2.0</td></tr>
+                                <tr><td class="p-2">CK Inicial > 40.000 UI/L</td><td class="p-2 text-right font-bold">2.0</td></tr>
+                                <tr><td class="p-2">Etiologia NÃO (exer, statina, convulsão...)</td><td class="p-2 text-right font-bold">3.0</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex flex-col justify-center space-y-4">
+                        <div class="bg-green-50 border-l-4 border-military-green p-3 rounded">
+                            <h4 class="font-bold text-military-green text-sm uppercase mb-1">Baixo Risco (Score < 5)</h4>
+                            <p class="text-xs text-gray-600">Risco de RRT ou Morte: <strong>2.3%</strong></p>
+                        </div>
+                        <div class="bg-yellow-50 border-l-4 border-military-gold p-3 rounded">
+                            <h4 class="font-bold text-military-gold text-sm uppercase mb-1">Risco Intermediário (Score 5-9)</h4>
+                            <p class="text-xs text-gray-600">Considere monitorização intensiva.</p>
+                        </div>
+                        <div class="bg-red-50 border-l-4 border-military-red p-3 rounded">
+                            <h4 class="font-bold text-military-red text-sm uppercase mb-1">Alto Risco (Score > 10)</h4>
+                            <p class="text-xs text-gray-600">Risco de RRT ou Morte: <strong>61.2%</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Management -->
+            <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col order-4 lg:order-none">
+                <div class="flex items-center mb-3 text-military-900">
+                    <span class="material-symbols-rounded mr-2 text-2xl text-military-green">bolt</span>
+                    <h2 class="font-display font-bold text-lg">Ação Imediata</h2>
+                </div>
+                <div class="text-center bg-military-surface-container p-3 rounded-lg mb-3">
+                    <p class="font-display font-bold text-xl text-military-green">Diurese ≥ 300 mL/h</p>
+                </div>
+                <p class="text-sm mb-1"><strong>Fluido:</strong> SF 0.9% ou Ringer.</p>
+                <p class="text-xs text-gray-500 italic">Evite Bicarbonato/Manitol de rotina.</p>
+            </div>
+
+            <!-- Algorithm -->
+            <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col order-5 lg:order-none col-span-1 lg:col-span-2">
+                <div class="flex items-center mb-4 border-b border-gray-100 pb-2">
+                    <span class="material-symbols-rounded mr-2 text-military-900">account_tree</span>
+                    <h3 class="font-display font-bold text-military-900">Algoritmo de Decisão</h3>
+                </div>
+                
+                <div class="mermaid flex-grow overflow-x-auto pb-4 flex justify-center">
+                    graph TD
+                        A[Suspeita Clínica] --> B{CK > 5x LSN<br/>ou >1000?}
+                        B -- Não --> C[Investigar Outras Causas]
+                        B -- Sim --> D[<b>TRATAMENTO IMEDIATO</b>]
+                        D --> E[Reidratação IV]
+                        E --> F[Meta: Diurese 300mL/h]
+                        D --> G{Sinais Alarme?}
+                        G -- Sim --> H[<b>UTI / Intervenção</b>]
+                        G -- Não --> I{Critérios Alta?}
+                        I -- Sim --> J[Alta c/ Seguimento]
+                        I -- Não --> K[Internação Enfermaria]
+                        
+                        style D fill:#FAB932,stroke:#050f14,stroke-width:2px,color:#050f14
+                        style F fill:#078551,stroke:#050f14,stroke-width:2px,color:white
+                        style H fill:#ba1a1a,color:white
+                        style A fill:#f0f4f8,stroke:#050f14
+                        style B fill:#f0f4f8,stroke:#050f14
+                </div>
+            </div>
+
+            <!-- Section 3: MD3 Style Tabs Checklist -->
+            <div class="bg-white rounded-xl shadow-md3-elevated overflow-hidden print:border-2 print:border-black">
+                <div class="bg-military-900 p-4 flex justify-between items-center text-white">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-rounded text-military-gold">checklist</span>
+                        <h3 class="font-display font-bold uppercase text-sm">Checklist: Conduta</h3>
+                    </div>
+                </div>
+                
+                <!-- MD3 Tabs -->
+                <div class="flex border-b border-gray-200 tab-buttons no-print">
+                    <button class="flex-1 py-3 text-sm font-bold text-military-green border-b-4 border-military-green bg-green-50/30 transition-colors" onclick="switchTab('alta', this)">
+                        Critérios de Alta
+                    </button>
+                    <button class="flex-1 py-3 text-sm font-bold text-gray-500 border-b-4 border-transparent hover:bg-gray-50 transition-colors" onclick="switchTab('internar', this)">
+                        Internação
+                    </button>
+                </div>
+
+                <div class="p-5 min-h-[180px]">
+                    <div id="alta" class="tab-content">
+                        <h4 class="font-display font-bold text-military-green mb-3 text-sm hidden print:block">✅ Candidato à Alta</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Primeiro episódio.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Sintomas leves e etiologia clara.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span><strong>Sinais vitais normais.</strong></li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Rim e Eletrólitos normais.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-green text-sm">check</span>Tolera hidratação oral.</li>
+                        </ul>
+                    </div>
+
+                    <div id="internar" class="tab-content hidden">
+                        <h4 class="font-display font-bold text-military-red mb-3 text-sm hidden print:block">🚨 Admissão Obrigatória</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Etiologia incerta ou recorrente.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Injúria Renal ou Hipercalemia.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Sinais vitais alterados.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Não tolera via oral.</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-rounded text-military-red text-sm">priority_high</span>Score Risco McMahon > 5.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- References Accordion -->
+            <div class="mt-8 no-print">
+                <details class="bg-white rounded-xl shadow-md3-elevated group overflow-hidden">
+                    <summary class="flex justify-between items-center cursor-pointer p-4 focus:outline-none hover:bg-gray-50 transition-colors">
+                        <h3 class="font-display font-bold text-military-900 text-xs uppercase tracking-wider flex items-center gap-2">
+                            <span class="material-symbols-rounded text-sm">menu_book</span>
+                            Referências Bibliográficas
+                        </h3>
+                        <span class="material-symbols-rounded text-gray-500 expand-icon transition-transform duration-300">expand_more</span>
+                    </summary>
+                    <div class="p-4 border-t border-gray-100 text-xs text-gray-600 bg-gray-50">
+                        <ul class="space-y-4">
+                            <li class="pl-2 border-l-2 border-military-gold">
+                                <p class="mb-1">Long, B., Koyfman, A., & Gottlieb, M. (2019). <strong>An evidence-based narrative review of the emergency department evaluation and management of rhabdomyolysis.</strong> <em>The American journal of emergency medicine</em>, 37(3), 518–523.</p>
+                            </li>
+                            <li class="pl-2 border-l-2 border-military-gold">
+                                <p class="mb-1">Mao, H. D., Li, X., Liu, S. Y., Xing, L., Zhao, J. B., Tan, Z. J., Sun, H. L., & Song, Q. (2021). <strong>Exertional rhabdomyolysis in newly enrolled cadets of a military academy.</strong> <em>Muscle & nerve</em>, 64(3), 336–341.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="mt-24 mb-4 no-print flex justify-center">
+                <img src="https://i.imgur.com/wjxT0G4.png" alt="Infográfico Complementar" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
+            </div>
+        </section>
+
+        <!-- ================================================================================= -->
         <!-- VIEW 3: LOMBALGIA AGUDA -->
         <!-- ================================================================================= -->
         <section id="view-lomb" class="view-section hidden space-y-6">
@@ -790,7 +760,7 @@
                 </div>
             </div>
 
-            <!-- Red Flags (Crucial) -->
+            <!-- Red Flags -->
             <div class="bg-military-red/5 border border-military-red/20 rounded-xl p-5 shadow-md3-elevated">
                 <div class="flex items-center mb-4 border-b border-military-red/20 pb-2">
                     <span class="material-symbols-rounded mr-2 text-military-red text-2xl">flag</span>
@@ -807,7 +777,7 @@
                 </div>
             </div>
 
-            <!-- Fluxograma de Imagem (Corrigido Mermaid) -->
+            <!-- Fluxograma -->
             <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col">
                 <div class="flex items-center mb-3 text-military-900">
                     <span class="material-symbols-rounded mr-2 text-2xl text-military-green">image</span>
@@ -868,7 +838,7 @@
                 </div>
             </div>
 
-            <!-- Referências (Lombalgia) -->
+            <!-- Referências -->
             <div class="mt-8 no-print">
                 <details class="bg-white rounded-xl shadow-md3-elevated group overflow-hidden">
                     <summary class="flex justify-between items-center cursor-pointer p-4 focus:outline-none hover:bg-gray-50 transition-colors">
@@ -895,17 +865,215 @@
                     </div>
                 </details>
             </div>
-
-            <!-- Imagem Logo -->
+            
             <div class="mt-12 mb-4 no-print flex justify-center">
                 <img src="https://i.imgur.com/wjxT0G4.png" alt="Logo Divisão Medicina" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
             </div>
         </section>
 
+        <!-- ================================================================================= -->
+        <!-- VIEW 4: CUIDADOS PERI-OPERATÓRIOS (NOVA PÁGINA) -->
+        <!-- ================================================================================= -->
+        <section id="view-periop" class="view-section hidden space-y-6">
+            
+            <!-- OBJETIVO -->
+            <div class="bg-military-surface-container rounded-xl p-4 shadow-md3-elevated flex items-start gap-4 border-l-4 border-military-gold">
+                <span class="material-symbols-rounded text-military-gold text-3xl mt-1">track_changes</span>
+                <div>
+                    <h3 class="font-display font-bold text-military-900 text-sm uppercase mb-1">Objetivo</h3>
+                    <p class="text-sm text-military-900 leading-snug">
+                        Fornecer diretrizes concisas sobre os <strong>cuidados peri-operatórios essenciais</strong> para pacientes submetidos a cirurgias ortopédicas na enfermaria, direcionadas a médicos não ortopedistas, enfermagem, fisioterapia e outros membros da equipe multidisciplinar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                
+                <!-- FASE PRÉ-OPERATÓRIA -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full">
+                    <div class="flex items-center mb-3 text-military-900 border-b border-gray-100 pb-2">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-green">assignment_ind</span>
+                        <h2 class="font-display font-bold text-lg">Fase Pré-Operatória</h2>
+                    </div>
+                    
+                    <h4 class="font-display font-bold text-military-900 text-xs uppercase mb-2 mt-2">1. Confirmação de Dados e Preparo</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Identificação:</strong> Checar nome completo, data nascimento e prontuário.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Procedimento:</strong> Confirmar cirurgia, lateralidade e local.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Jejum:</strong> Verificar tempo adequado (protocolo institucional).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Medicações:</strong> Revisar uso, alergias e ajustes (anticoagulantes, insulina).</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Preparo da Pele:</strong> Tricotomia, banho com clorexidina.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Consentimento:</strong> Confirmar assinatura do TCLE.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Dispositivos/Exames:</strong> Meias antitrombóticas, curativos; exames válidos.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-military-gold text-base mt-0.5">check</span><strong>Educação:</strong> Reforçar orientações (dor, mobilização, muletas, TVP).</li>
+                    </ul>
+
+                    <h4 class="font-display font-bold text-military-900 text-xs uppercase mb-2 mt-4">2. Avaliação Clínica Pré-Anestésica</h4>
+                    <p class="text-sm text-gray-700 ml-6">Certificar-se da avaliação anestésica e ciência de riscos/necessidades especiais.</p>
+
+                    <h4 class="font-display font-bold text-military-900 text-xs uppercase mb-2 mt-4">3. Comunicação com a Equipe</h4>
+                    <p class="text-sm text-gray-700 ml-6 mb-2">Informar equipe cirúrgica sobre alterações ou intercorrências no pré-op imediato.</p>
+                </div>
+
+                <!-- FASE PÓS-OPERATÓRIA IMEDIATA -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated flex flex-col h-full">
+                    <div class="flex items-center mb-3 text-military-900 border-b border-gray-100 pb-2">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-green">monitor_heart</span>
+                        <h2 class="font-display font-bold text-lg">Pós-Op Imediato <span class="text-sm font-normal text-gray-500">(24-48h)</span></h2>
+                    </div>
+                    
+                    <ul class="space-y-3 text-sm text-gray-700 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">vital_signs</span>
+                            <div>
+                                <span class="font-bold text-military-900">Monitorização:</span> Sinais vitais, dor (EVA), nível de consciência, curativo (sangramento/infecção), perfusão periférica/motricidade distal, e sinais de náusea/retenção urinária.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">prescriptions</span>
+                            <div>
+                                <span class="font-bold text-military-900">Manejo da Dor:</span> Analgesia multimodal. Avaliar eficácia e ajustar dose. Uso de métodos não farmacológicos (gelo, elevação).
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">blood_pressure</span>
+                            <div>
+                                <span class="font-bold text-military-900">Prevenção de TEV:</span> Meias (TEDS) / compressão pneumática. Iniciar profilaxia (HBPM, DOACs) e mobilização precoce.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">sanitizer</span>
+                            <div>
+                                <span class="font-bold text-military-900">Prevenção de ISC:</span> Curativo limpo/seco, técnica asséptica. Vigiar sinais flogísticos. Garantir antibioticoprofilaxia.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">directions_walk</span>
+                            <div>
+                                <span class="font-bold text-military-900">Mobilização / Fisioterapia:</span> Início precoce com restrições. Orientar transferências e auxílios.
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-rounded text-military-900 text-lg bg-gray-100 rounded p-1">water_drop</span>
+                            <div>
+                                <span class="font-bold text-military-900">Vesical e Intestinal:</span> Monitorar diurese (retenção) e padrão de evacuação (constipação).
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- INTRA-OP E PÓS-OP TARDIO -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <div class="bg-military-900 text-white p-5 rounded-xl shadow-md3-elevated col-span-1">
+                    <div class="flex items-center mb-3 border-b border-gray-700 pb-2">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">surgical</span>
+                        <h2 class="font-display font-bold text-lg text-military-gold">Intra-Operatório</h2>
+                    </div>
+                    <p class="text-sm text-gray-200 mb-2">Conhecimento essencial para a enfermaria:</p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><span class="material-symbols-rounded text-sm text-military-gold">radio_button_checked</span>Tipo de cirurgia realizada.</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-rounded text-sm text-military-gold">radio_button_checked</span>Materiais (próteses, órteses).</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-rounded text-sm text-military-gold">radio_button_checked</span>Intercorrências relevantes.</li>
+                        <li class="flex items-start gap-2"><span class="material-symbols-rounded text-sm text-military-gold mt-0.5">radio_button_checked</span>Verificar ordens pós-op (restrição de movimento, carga, drenos).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-3 border-b border-gray-100 pb-2">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-green">home_work</span>
+                        <h2 class="font-display font-bold text-lg text-military-900">Pós-Op Tardio <span class="text-sm font-normal text-gray-500">(Após 48h até alta)</span></h2>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                        <div>
+                            <p class="font-bold text-military-900 mb-1">1. Reabilitação:</p>
+                            <p>Progressão de carga e amplitude (orientação fisio). Monitorar tolerância.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-military-900 mb-1">2. Dor e Curativos:</p>
+                            <p>Transição para analgesia oral/desmame. Trocas de curativo e retirada de dreno.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-military-900 mb-1">3. Complicações:</p>
+                            <p>Manter medidas de TEV. Vigiar infecção, soltura de prótese ou lesão nervosa.</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-military-900 mb-1">4. Educação (Alta):</p>
+                            <p>Cuidados domiciliares, sinais de alerta, retorno agendado e fisioterapia ambulatorial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SINAIS DE ALERTA & COMUNICAÇÃO -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                
+                <!-- Comunicação -->
+                <div class="bg-white p-5 rounded-xl shadow-md3-elevated col-span-1 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <span class="material-symbols-rounded mr-2 text-2xl text-military-gold">forum</span>
+                        <h3 class="font-display font-bold text-military-900 text-base uppercase">Comunicação</h3>
+                    </div>
+                    <p class="text-sm text-gray-700 mb-2">
+                        Manter comunicação clara e regular entre médicos, enfermagem, fisioterapia e serviço social.
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Compartilhar informações sobre progressão e intercorrências. Participar de <em>rounds</em> multidisciplinares.
+                    </p>
+                </div>
+
+                <!-- Alertas -->
+                <div class="bg-military-red/10 border-l-4 border-military-red p-5 rounded-xl shadow-md3-elevated col-span-1 lg:col-span-2">
+                    <div class="flex items-center mb-3">
+                        <span class="material-symbols-rounded mr-2 text-military-red text-2xl">warning</span>
+                        <h3 class="font-display font-bold text-military-red text-lg uppercase">Avisar a Ortopedia (Sinais de Alerta)</h3>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 text-sm text-military-900 font-medium">
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Dor desproporcional / não controlada</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Sinais de Infecção do Sítio Cirúrgico</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Alteração de perfusão / cianose</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Déficit neurológico novo/progressivo</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Sinais de TEV (dor panturrilha, dispneia)</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Febre persistente</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Drenagem excessiva / aspecto incomum</p>
+                        <p class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-military-red"></span> Soltura/mau funcionamento de dispositivos</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Referências -->
+            <div class="mt-8 no-print">
+                <details class="bg-white rounded-xl shadow-md3-elevated group overflow-hidden">
+                    <summary class="flex justify-between items-center cursor-pointer p-4 focus:outline-none hover:bg-gray-50 transition-colors">
+                        <h3 class="font-display font-bold text-military-900 text-xs uppercase tracking-wider flex items-center gap-2">
+                            <span class="material-symbols-rounded text-sm">menu_book</span> Referências Bibliográficas
+                        </h3>
+                        <span class="material-symbols-rounded text-gray-500 expand-icon transition-transform duration-300">expand_more</span>
+                    </summary>
+                    <div class="p-4 border-t border-gray-100 text-xs text-gray-600 bg-gray-50">
+                        <ul class="space-y-4">
+                            <li class="pl-2 border-l-2 border-military-gold">
+                                <p class="mb-1">Fontes, B. V., Oliveira, A. M. de ., Moraes, É. B. de ., Antunes, J. de M., Salvetti, M. de G., & Carmo, T. G. do .. (2024). <strong>Quality of nursing care in pain management in orthopedic surgical patients: a scoping review</strong>. <em>Revista Da Escola De Enfermagem Da USP</em>, 58, e20240110.</p>
+                                <a href="https://doi.org/10.1590/1980-220X-REEUSP-2024-0110en" target="_blank" class="text-military-green hover:text-military-900 hover:underline break-all block flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-rounded text-[10px]">open_in_new</span> Link DOI
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <div class="mt-12 mb-4 no-print flex justify-center">
+                <img src="https://i.imgur.com/wjxT0G4.png" alt="Logo Divisão Medicina" class="w-full md:max-w-2xl rounded-xl shadow-md3-elevated">
+            </div>
+
+        </section>
+
     </main>
 
     <!-- Discreet Footer -->
-    <!-- Alterado pb-4 para pb-2 para reduzir o espaço inferior no mobile -->
     <footer class="max-w-7xl mx-auto p-4 text-center pb-2 md:pb-4 no-print">
         <p class="text-xs text-gray-400 font-sans">
             &copy;2026 CT (Md) Mauriston. Powered by Gemini.
@@ -1291,6 +1459,9 @@
             } else if(viewId === 'lomb') {
                 titleEl.innerText = "Lombalgia Aguda";
                 subEl.innerText = "MANEJO ATRAUMÁTICO";
+            } else if(viewId === 'periop') {
+                titleEl.innerText = "Cuidados Peri-Operatórios";
+                subEl.innerText = "ROTINAS DE ENFERMARIA EM ORTOPEDIA";
             }
 
             // Close menu
